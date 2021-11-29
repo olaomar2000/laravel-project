@@ -1,0 +1,119 @@
+body {
+    font-family: 'Cairo', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #146c43;
+}
+
+.toggle-butt {
+    display: none;
+}
+
+@media screen and (min-width: 100px) and (max-width: 900px) {
+    #datashow #cards div {
+        margin-top: 14px !important;
+        width: 100% !important;
+        margin: auto;
+    }
+}
+
+@media (min-width: 1000px) {
+    #datashow {
+        width: 71%;
+    }
+}
+
+@media (max-width: 550px) {
+    #checkboxes div {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media(max-width: 768px) {
+    * {
+        text-align: center;
+    }
+    .add-user input {
+        margin: auto;
+    }
+    #sidebar {
+        display: none !important;
+    }
+    .toggle-butt {
+        display: block;
+    }
+}
+
+
+/* Dropdown Button */
+
+.dropbtn {
+    background-color: white;
+    color: black;
+    padding: 5px;
+    font-size: 1.25rem;
+    border: none;
+}
+
+
+/* The container <div> - needed to position the dropdown content */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+/* Dropdown Content (Hidden by Default) */
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 220px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: 60px;
+    top: 10px;
+    text-align: right;
+}
+
+
+/* Links inside the dropdown */
+
+.dropdown-content a {
+    color: black;
+    padding: 12px;
+    text-decoration: none;
+    display: block;
+    font-size: 1rem;
+}
+
+
+/* Change color of dropdown links on hover */
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+
+/* Show the dropdown menu on hover */
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+
+.dropdown:hover .dropbtn {
+    background-color: white;
+}
