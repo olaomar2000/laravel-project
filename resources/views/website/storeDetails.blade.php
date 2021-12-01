@@ -80,8 +80,7 @@
               <p> {{$store->address}} </p>
               <p> {{$store->phone}} </p>
 
-              <!-- @foreach($store->ratings as $mac)
-              @if($mac->mac_address != exec('getmac')) -->
+
               <form action="{{url('rate/' . $store->id)}}" method="POST">
                 @csrf
                 <div class="container d-flex justify-content-center mt-5">
@@ -102,10 +101,18 @@
                   </div>
                 </div>
               </form>
+         
               
+              <!-- @foreach($store->ratings as $mac)
+              @if($mac->mac_address != exec('getmac')) -->
+              
+
               <!-- @endif
 
               @endforeach -->
+            
+
+
             </div>
           </div>
         </div>

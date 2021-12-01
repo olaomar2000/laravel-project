@@ -16,23 +16,17 @@ use App\Http\Controllers\Dashbord\StoreController;
 */
 
                     /*   user website*/
-Route::get('/index', 'IndexController@index')->name('index');
-Route::get('/stores/{id}', 'IndexController@stores')->name('stores');
-Route::get('/details/{id}', 'IndexController@details')->name('details');
+Route::get('/index', 'Website\IndexController@index')->name('index');
+Route::get('/stores/{id}', 'Website\IndexController@stores')->name('stores');
+Route::get('/details/{id}', 'Website\IndexController@details')->name('details');
 Route::post('rate/{id}', 'Dashbord\RatingController@addRate');
 
 
 
 /** Search */
-Route::post('search', 'IndexController@search');
+Route::post('search', 'Website\IndexController@search');
 
 
-
-
-//Auth::routes();
-Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
-Route::post('/login', 'Auth\LoginController@login')->name('login.submit');
-Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 
 
                          /* Dashbord CATEGORY */
@@ -50,8 +44,6 @@ Route::post('category/update/{id}', 'Dashbord\CategoryController@update');
 
 // delete category
 Route::get('category/delete/{id}', 'Dashbord\CategoryController@destroy');
-Route::get('category/restore/{id}', 'Dashbord\CategoryController@restore');
-
 
                         /* Dashbord STORE */
 
@@ -68,12 +60,20 @@ Route::post('store/update/{id}', 'Dashbord\StoreController@update');
 
 // delete store
 Route::get('store/delete/{id}', 'Dashbord\StoreController@destroy');
-Route::get('category/restore/{id}', 'Dashbord\StoreController@restore');
 
 
                            /*Dashbord  Rating */
 
 Route::get('rating/index', 'Dashbord\RatingController@index');      
+
+
+//Auth::routes();
+Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('/login', 'Auth\LoginController@login')->name('login.submit');
+//Route::get('logout', 'Auth\LoginController@logout')->name('logout');
+Route::get('logout',function(){
+return view('auth.login');
+});
 
 
 

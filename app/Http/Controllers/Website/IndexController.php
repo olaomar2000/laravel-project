@@ -1,25 +1,26 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Website;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Store;
-
+use App\Http\Controllers\Controller;
 class IndexController extends Controller
 {
     
     public function index()
     {
-        return view('store.index')->with('categories',Category::all());
+        $category = Category::paginate(3);
+        return view('website.index')->with('categories',$category);
     }
 
     public function stores($id)
     {
-        return view('store.store')->with('category',Category::find($id));
+        return view('website.store')->with('category',Category::find($id));
     }
     public function details($id){
-        return view('store.storeDetails')->with('store',Store::find($id));
+        return view('website.storeDetails')->with('store',Store::find($id));
     }
 
 
@@ -32,10 +33,10 @@ class IndexController extends Controller
         $filtered = $store->filter(function ($item) use ($search) {
 
             return stripos($item['name'], $search) !== false;
-            return $item->name === $search; //search must be exactly word
+            return $item->name === $search; 
 
         });
-        return view('store.search')->with('store', $filtered);
+        return view('website.search')->with('store', $filtered);
     }
 
 }

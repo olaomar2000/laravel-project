@@ -46,6 +46,16 @@
     </div>
   </nav>
   <!--  Nav bar -->
+  <div class="row add-user" >
+			@foreach ($errors->all() as $msg)
+				<div class="col-12">
+					<div class="alert alert-danger">{{ $msg }}</div>
+				</div>
+			@endforeach
+   
+</div>
+
+
 
   <!-- Main body -->
   <div class="container row m-auto d-flex justify-content-between my-4">

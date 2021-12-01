@@ -6,9 +6,10 @@
      
     <div id="datashow" class="col-md-8 d-flex flex-column fs-6 border border-2">
       <div class="row add-user" style="background-color: lightgray;">
-      <form action="{{URL('category/update/' . $category->id)}}" method="POST" enctype="multipart/form-data">
-     @csrf
+      
         <h4 class="p-4">تعديل تصنيف</h4>
+        <form action="{{URL('category/update/' . $category->id)}}" method="POST" enctype="multipart/form-data">
+     @csrf
         <div class="col-md-6 d-flex p-3">
           <p class="mx-1" style="padding-left: 40px;"> اسم التصنيف </p>
           <input type="text" name="name" class="form-control" value="{{ $category->name }}" style="width:60%;">

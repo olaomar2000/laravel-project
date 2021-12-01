@@ -8,7 +8,7 @@
             @csrf
             <div class="col-md-6 d-flex p-3">
                 <p class="mx-1" style="padding-left: 40px;"> اسم المتجر </p>
-                <input type="text" class="form-control" value="{{ $store->name }}" style="width:60%;">
+                <input type="text"  name ="name" class="form-control" value="{{ $store->name }}" style="width:60%;">
             </div>
             <div class="col-md-6 d-flex p-3">
                 <p class="mx-1" style="padding-left: 17px;"> الفئة </p>
@@ -30,15 +30,15 @@
 
             <div class="col-md-6 d-flex p-3">
                 <p class="mx-1"> صورة المتجر </p>
-                <input type="file" name="image" class="form-control" style="width:60%;">
+                <input type="file" name="logo" class="form-control" style="width:60%;">
             </div>
             <div class="col-md-6 d-flex p-3">
                 <p class="mx-1"> رقم الهاتف </p>
-                <input type="text" class="form-control"value="{{ $store->phone }}" style="width:60%;">
+                <input type="text" name="phone" class="form-control"value="{{ $store->phone }}" style="width:60%;">
             </div>
             <div class="col-md-6 d-flex p-3">
                 <p class="mx-1"> العنوان</p>
-                <input type="text" class="form-control"value="{{ $store->address }}" style="width:60%;">
+                <input type="text" name="address" class="form-control"value="{{ $store->address }}" style="width:60%;">
             </div>
 
 

@@ -33,7 +33,7 @@ class CategoryRequest extends FormRequest
         return [
             'model.required' => 'name is required',
             'model.string' => 'name must be a string',
-            'image.required' => 'You must attach an image',
+             'image.required' => 'You must attach an image',
         ];
     }
 }

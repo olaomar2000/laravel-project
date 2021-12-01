@@ -18,6 +18,7 @@
                       <th scope="col">الشعار</th>
                       <th scope="col">اسم المتجر</th>
                       <th scope="col">التصنيف</th>
+                      
                       <th scope="col">التقييم</th>
                       <th scope="col">الاجراء</th>
                      
@@ -37,11 +38,9 @@
                 <td>
                   @for($x =round($store->ratings->avg('rate'))+1 ; $x <= 5 ; $x++)
                   <i class="fa fa-star" aria-hidden="true" style="color: #9ca2a7;"></i>
-                  <!-- <img width="15" hieght="15" src="{{asset('admin/DASHBORRD ICONS/star_g.jpeg')}}"> -->
                       @endfor
                   @for($x =1 ; $x <= round($store->ratings->avg('rate')) ; $x++)
                   <i class="fa fa-star" aria-hidden="true" style="color: #FFFF00;"></i>     
-                  <!-- <img width="15" hieght="15" src="{{asset('admin/DASHBORRD ICONS/star_yellwo.jpeg')}}"> -->
                       @endfor</td>
 								
                       <td>

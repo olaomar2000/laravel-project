@@ -107,6 +107,7 @@
         @endforeach
 
       </div>
+      
   </section>
 
   <!-- end product section -->

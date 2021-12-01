@@ -181,8 +181,11 @@
         @endforeach
 
       </div>
-      
+      <div class="heading_container heading_center">
+						{{ $categories->links() }}
+					</div>
     </div>
+    
   </section>
 
   <!-- end product section -->

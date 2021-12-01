@@ -21,7 +21,7 @@ class CategoryController extends Controller
     public function create()
     {
 
-        return view('admin.category.create');
+        return view('dashbord.category.create');
     }
 
 
@@ -53,7 +53,7 @@ class CategoryController extends Controller
     {
         $categories = Category::all();
     
-      return view('admin.category.index')->with('categories', $categories);
+      return view('dashbord.category.index')->with('categories', $categories);
     }
 
 
@@ -63,7 +63,7 @@ class CategoryController extends Controller
     {
         $category = Category::where('id', '=', $id)->first();
         
-        return view('admin.category.edit')->with('category', $category);
+        return view('dashbord.category.edit')->with('category', $category);
     }
 
 
@@ -72,20 +72,19 @@ class CategoryController extends Controller
 
         $name = $request['name'];
         $image = $request['image'];
-
-        $path = 'uploads/images/';
-        $image_name = time() + rand(1, 10000000000) . '.' . $image->getClientOriginalExtension();
-
-        Storage::disk('local')->put($path . $image_name, file_get_contents($image));
-
-        $status = Storage::disk('local')->exists($path . $image_name);
-
         $category = Category::find($id);
 
-        $category->name = $name;
+        if($image != null){
+        $path = 'uploads/images/';
+        $image_name = time() + rand(1, 10000000000) . '.' . $image->getClientOriginalExtension();
+        Storage::disk('local')->put($path . $image_name, file_get_contents($image));
+        $status = Storage::disk('local')->exists($path . $image_name);
         $category->image = $path . $image_name;
+        }
+       
+        
+        $category->name = $name;
         $result = $category->save();
-
         return redirect()->back();
     }
 

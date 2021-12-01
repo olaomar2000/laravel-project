@@ -1,6 +1,26 @@
 @extends('layouts.admin_include')
+
 @section('content')
 <!-- body -->
+
+<!-- @if(session()->has('staues'))
+@if(session('staues'))
+
+
+<div class="col-12">
+    <div class="alert alert-success">تمت الاضافة بنجاح </div>
+
+</div>
+
+@else
+<div class="col-12">
+    <div class="alert alert-danger">فشلت الاضافة </div>
+
+</div>
+
+@endif
+@endif -->
+
 <div id="datashow" class="col-md-8 d-flex flex-column fs-6 border border-2">
     <div class="row add-user" style="background-color: lightgray;">
         <h4 class="p-4">اضافة متجر </h4>
@@ -15,9 +35,9 @@
                 <select name="category_id" class="form-control" style="width:60%;">
 
 
-                @foreach ($store as $stores)
-								<option value="{{ $stores->id }}">{{ $stores->name }}</option>
-							@endforeach
+                    @foreach ($store as $stores)
+                    <option value="{{ $stores->id }}">{{ $stores->name }}</option>
+                    @endforeach
 
 
                 </select>
@@ -29,11 +49,11 @@
             </div>
             <div class="col-md-6 d-flex p-3">
                 <p class="mx-1"> رقم الهاتف </p>
-                <input type="text"name="phone" class="form-control" style="width:60%;">
+                <input type="text" name="phone" class="form-control" style="width:60%;">
             </div>
             <div class="col-md-6 d-flex p-3">
                 <p class="mx-1"> العنوان</p>
-                <input type="text" name="address"class="form-control" style="width:60%;">
+                <input type="text" name="address" class="form-control" style="width:60%;">
             </div>
 
 
